@@ -1,0 +1,17 @@
+The package requirements for this Python program are:
+
+- requests: Used for making HTTP requests to scrape websites.
+- bs4 (BeautifulSoup): Used for parsing HTML content and extracting relevant data from it.
+- spacy: Used for natural language processing tasks such as cleaning data and extracting entities.
+
+To install these packages, you can use the following command:
+
+```
+pip install requests beautifulsoup4 spacy
+```
+
+Additionally, you'll need to download the 'en_core_web_sm' model for Spacy. You can do this by running the following command after installing Spacy:
+
+```
+python -m spacy download en_core_web_sm
+```
