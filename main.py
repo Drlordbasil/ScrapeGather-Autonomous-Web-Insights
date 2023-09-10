@@ -57,11 +57,13 @@ class ContentAggregator:
         self.topic_modeling = None
 
     def generate_summary(self, data):
-        summary = self.text_summarizer.summarize(data)  # Assuming text_summarizer module is available
+        # Assuming text_summarizer module is available
+        summary = self.text_summarizer.summarize(data)
         return summary
 
     def generate_topics(self, data):
-        topics = self.topic_modeling.find_topics(data)  # Assuming topic_modeling module is available
+        # Assuming topic_modeling module is available
+        topics = self.topic_modeling.find_topics(data)
         return topics
 
 
@@ -71,11 +73,13 @@ class ContentPublisher:
 
     def create_blog_post(self, content):
         blog_content = self.create_blog_content(content)
-        optimized_content = self.seo_manager.optimize_content(blog_content)  # Assuming seo_manager module is available
+        optimized_content = self.seo_manager.optimize_content(
+            blog_content)  # Assuming seo_manager module is available
         return optimized_content
 
     def publish_on_social_media(self, content):
-        social_media_updates = self.generate_social_media_updates(content)  # Assuming generate_social_media_updates function is available
+        # Assuming generate_social_media_updates function is available
+        social_media_updates = self.generate_social_media_updates(content)
         return social_media_updates
 
 
@@ -84,9 +88,12 @@ class PerformanceMonitoring:
         self.sentiment_analyzer = None
 
     def monitor_performance(self, content):
-        engagement_rates = self.get_engagement_rates(content)  # Assuming get_engagement_rates function is available
-        traffic_data = self.get_traffic_data(content)  # Assuming get_traffic_data function is available
-        user_sentiments = self.sentiment_analyzer.analyze_sentiments(content)  # Assuming sentiment_analyzer module is available
+        # Assuming get_engagement_rates function is available
+        engagement_rates = self.get_engagement_rates(content)
+        # Assuming get_traffic_data function is available
+        traffic_data = self.get_traffic_data(content)
+        user_sentiments = self.sentiment_analyzer.analyze_sentiments(
+            content)  # Assuming sentiment_analyzer module is available
         return engagement_rates, traffic_data, user_sentiments
 
 
@@ -102,12 +109,15 @@ class WebScrapingProgram:
     def run_program(self):
         query = self.query_generator.generate_query()
         search_results = self.web_scraper.scrape_website(query)
-        cleaned_data, entities = self.data_extractor.extract_data(search_results)
+        cleaned_data, entities = self.data_extractor.extract_data(
+            search_results)
         summary = self.content_aggregator.generate_summary(cleaned_data)
         topics = self.content_aggregator.generate_topics(cleaned_data)
         blog_post = self.content_publisher.create_blog_post(summary)
-        social_media_updates = self.content_publisher.publish_on_social_media(summary)
-        engagement_rates, traffic_data, user_sentiments = self.performance_monitoring.monitor_performance(summary)
+        social_media_updates = self.content_publisher.publish_on_social_media(
+            summary)
+        engagement_rates, traffic_data, user_sentiments = self.performance_monitoring.monitor_performance(
+            summary)
         return entities, topics, blog_post, social_media_updates, engagement_rates, traffic_data, user_sentiments
 
 
