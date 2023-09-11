@@ -1,6 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
 import spacy
+from bs4 import BeautifulSoup
+import requests
+Optimized Python script:
 
 
 class QueryGenerator:
@@ -24,8 +25,7 @@ class WebScraper:
             soup = BeautifulSoup(response.content, 'html.parser')
             relevant_data = soup.find_all("div", class_="relevant-data")
             return relevant_data
-        else:
-            return None
+        return None
 
 
 class DataExtractor:
@@ -117,7 +117,7 @@ class WebScrapingProgram:
         social_media_updates = self.content_publisher.publish_on_social_media(
             summary)
         engagement_rates, traffic_data, user_sentiments = self.performance_monitoring.monitor_performance(
-            summary)
+            blog_post)  # Use blog_post instead of summary for monitoring performance
         return entities, topics, blog_post, social_media_updates, engagement_rates, traffic_data, user_sentiments
 
 
